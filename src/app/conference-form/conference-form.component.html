@@ -1,0 +1,78 @@
+<div class="dashboard-container">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <h3>Dashboard</h3>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/myconferences">My Participants</a></li>
+      <li><a href="/add-conf">New Conference</a></li>
+      <li><a href="/orgaConf">All Conference</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-content">
+    <h2>Create Conference</h2>
+    
+    <!-- Conference Form -->
+    <form #conferenceForm="ngForm" (ngSubmit)="createConference()">
+
+      <div class="conference-form">
+        <label>Topic</label>
+        <input 
+          [(ngModel)]="conference.topic" 
+          name="topic" 
+          type="text" 
+          required 
+          #topic="ngModel" />
+        <div *ngIf="topic.invalid && topic.touched" class="error">
+          Topic is required.
+        </div>
+
+        <label>Location</label>
+        <input 
+          [(ngModel)]="conference.location" 
+          name="location" 
+          type="text" 
+          required 
+          #location="ngModel" />
+        <div *ngIf="location.invalid && location.touched" class="error">
+          Location is required.
+        </div>
+
+        <label>Deadline</label>
+        <input 
+          [(ngModel)]="conference.deadline" 
+          name="deadline" 
+          type="date" 
+          required 
+          #deadline="ngModel" />
+        <div *ngIf="deadline.invalid && deadline.touched" class="error">
+          Deadline is required.
+        </div>
+
+        <!-- Sessions -->
+        <label>Sessions</label>
+        <div *ngFor="let session of sessions">
+          <input 
+            type="checkbox" 
+            [value]="session.id" 
+            (change)="addSessionToConference(session)" />
+          <span>{{ session.topic }}</span>
+        </div>
+
+        <!-- Resources -->
+        <label>Resources</label>
+        <div *ngFor="let ressource of ressources">
+          <input 
+            type="checkbox" 
+            [value]="ressource.id" 
+            (change)="addRessourceToConference(ressource)" />
+          <span>{{ ressource.name }}</span>
+        </div>
+
+        <button type="submit" >Create Conference</button>
+      </div>
+    </form>
+  </main>
+</div>

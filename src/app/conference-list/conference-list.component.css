@@ -1,0 +1,124 @@
+.hero-section {
+    background: url('https://www.example.com/vip-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-radius: 8px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .btn-vip {
+    padding: 12px 25px;
+    background-color: #ff6f61; /* VIP color */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-vip:hover {
+    background-color: #ff4d39; /* Darker shade on hover */
+  }
+  
+
+
+/* Conference Section Container */
+.conference-container {
+    text-align: center;
+    padding: 50px;
+    color: var(--text);
+}
+
+.conference-container h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    color: #505050;
+    margin-bottom: 30px;
+}
+
+/* Conference List */
+.conference-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Conference Card */
+.conference-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.conference-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Conference Title */
+.conference-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+/* Conference Location */
+.location {
+    font-size: 1rem;
+    color: #bbbbbb;
+    margin-bottom: 10px;
+}
+
+/* Conference Description */
+.description {
+    font-size: 1rem;
+    color: #dddddd;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Join Conference Button */
+.btn-primary {
+    background: var(--primary);
+    color: rgb(75, 75, 75);
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #524eff;
+}

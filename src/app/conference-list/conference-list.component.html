@@ -1,0 +1,38 @@
+<div class="hero-section" *ngIf="!vip && matricule.length === 0">
+  <div class="hero-content">
+    <h1>Become a VIP Member</h1>
+    <p>Unlock exclusive access to premium features, VIP conferences, and special events.</p>
+    <a class="btn btn-vip" href="/paiements">Buy Membership</a>
+  </div>
+</div>
+
+
+<div class="conference-container">
+  <h2>Welcome to Smart Meet Conferences</h2>
+  <p class="welcome-text">
+    Join cutting-edge scientific discussions and collaborate with experts worldwide.
+    Choose a conference and be part of the future of research!
+  </p>
+
+  <div class="conference-list">
+    <div *ngFor="let conference of conferences" class="conference-card">
+      <h3>{{ conference.topic }}</h3>
+      <p class="location">📍 {{ conference.location }}</p>
+    
+      <button 
+      *ngIf="vip || matricule.length >0"
+      class="btn btn-primary" 
+      (click)="participateInConference(conference.id)"
+      [disabled]="conference.participants.includes(userId)">
+      {{ conference.participants.includes(userId) ? 'Already Joined' : 'Join Conference' }}
+    </button>
+    
+    <button
+    *ngIf="vip || matricule.length >0"
+    class="btn btn-info"
+    (click)="navigateToConferenceDetail(conference.id)">
+    Add Feedback
+  </button>
+    </div>
+  </div>
+</div>
